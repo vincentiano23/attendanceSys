@@ -1,0 +1,22 @@
+<h2>Mark Attendance</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Status</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>
+                <select name="status_{{ student.id }}">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                </select>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Submit Attendance</button>
+</form>
