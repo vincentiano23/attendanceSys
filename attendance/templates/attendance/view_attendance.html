@@ -10,6 +10,7 @@
             <th>Student</th>
             <th>Date</th>
             <th>Status</th>
+            <th>Registration Number</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
             <td>{{ record.student.name }}</td>
             <td>{{ record.date }}</td>
             <td>{{ record.status }}</td>
+            <td> {{record.student.registration_number}}</td>
         </tr>
         {% empty %}
         <tr>

@@ -11,6 +11,7 @@
             <tr>
                 <th>Student</th>
                 <th>Status</th>
+                <th>Registration Number</th>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +23,16 @@
                         <option value="Present">Present</option>
                         <option value="Absent">Absent</option>
                     </select>
+                  
+                        <td>{{ student.registration_number}}</td>
+                    
                 </td>
             </tr>
+           
             {% endfor %}
         </tbody>
     </table>
+   
     <button type="submit" class="btn btn-primary">Submit Attendance</button>
 </form>
 {% endblock %}
