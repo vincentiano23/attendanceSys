@@ -1,15 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}View Attendance Records{% endblock %}
+
+{% block content %}
 <h2>Attendance Records</h2>
-<table>
-    <tr>
-        <th>Student</th>
-        <th>Date</th>
-        <th>Status</th>
-    </tr>
-    {% for record in records %}
-    <tr>
-        <td>{{ record.student.name }}</td>
-        <td>{{ record.date }}</td>
-        <td>{{ record.status }}</td>
-    </tr>
-    {% endfor %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.student.name }}</td>
+            <td>{{ record.date }}</td>
+            <td>{{ record.status }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No attendance records available.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
+{% endblock %}

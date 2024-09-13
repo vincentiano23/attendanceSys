@@ -5,12 +5,13 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
+    
 
 class Student(models.Model):
     name = models.CharField(max_length=100)
-    registration_number = models.CharField(max_length=10, unique=True)
+    registration_number = models.CharField(max_length=20, unique=True)
+    course = models.CharField(max_length=100, default='course')
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-
     def __str__(self):
         return self.name
 
