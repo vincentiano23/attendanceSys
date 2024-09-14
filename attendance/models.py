@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.db import models
 
 class Department(models.Model):
@@ -17,8 +18,8 @@ class Student(models.Model):
 
 class Attendance(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    date = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=10, choices=[('Present', 'Present'), ('Absent', 'Absent')])
+    date = models.DateField(default=timezone)
+    status = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.student.name} - {self.date}'

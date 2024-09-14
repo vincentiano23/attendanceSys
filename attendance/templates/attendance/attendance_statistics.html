@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Student Attendance Statistics</h2>
+    
+    <div>
+        <h3>Attendance Data</h3>
+        <ul>
+        {% for data in attendance_data %}
+            <li>{{ data.name }}: {{ data.percentage }}%</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <h3>Attendance Graph</h3>
+        <img src="data:image/png;base64,{{ graph }}" alt="Attendance Graph">
+    </div>
+
+{% endblock %}
