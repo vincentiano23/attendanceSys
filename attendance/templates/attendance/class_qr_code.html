@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}QR Code{% endblock %}
+
+{% block content %}
+<div class="container mt-4 text-center">
+    <h2>Scan QR Code to Mark Attendance</h2>
+    <img src="data:image/png;base64,{{ qr_image }}" alt="QR Code">
+    <p class="mt-3">Please scan this QR code to mark your attendance.</p>
+</div>
+{% endblock %}
